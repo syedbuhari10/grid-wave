@@ -5,9 +5,9 @@ using UnityEngine;
 public class move_particle : MonoBehaviour
 {
 
-    public float phase = 0;
-    public float speed = 2;
-    public float maginitude = 2;
+    public double phase = 0;
+    public double speed = 2;
+    public double maginitude = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +18,11 @@ public class move_particle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3 (transform.position.x, sineAmount(), transform.position.z);
+        transform.position = new Vector3 (transform.position.x, (float)sineAmount(), transform.position.z);
     }
 
-    public float sineAmount()
+    public double sineAmount()
     {
-        return maginitude * Mathf.Sin(Time.time * speed + phase);
+        return maginitude * Mathf.Sin((float)(Time.time * speed + phase));
     }
 }
